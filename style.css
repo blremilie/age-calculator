@@ -1,0 +1,130 @@
+/*Début définition de la police*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*Fin définition de la police*/
+
+/*Début style de base*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    font-size: calc(16px + 0.390625vw);
+}
+
+html {
+    height: 100%; 
+    width: 100%; 
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: hsl(0, 0%, 86%);
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+li{
+    display: inline flex;
+    color:hsl(0, 1%, 44%);
+    padding:120px;
+    padding-bottom: 0px;
+    flex-direction: row;
+    list-style-type: none;
+    margin-left:-10%;
+    margin-top: -5%;
+    font-family: poppins;
+    font-size: 20px;
+}
+/*Fin style de base*/
+
+/*Début style age_calculator*/
+
+#age_calculator{
+    background-color: white;
+    height:70%;
+    width: 60%;
+    border-radius: 5%;
+    border-bottom-right-radius:30%;
+}
+
+/*Fin syle age_calculator*/
+
+/*Début style input [type=text]*/
+
+#day{
+    display: inline;
+    flex-direction: row;
+    font-family: poppins;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 5%;
+    border-style: solid;
+    border-color:hsl(0, 0%, 86%);
+    border-width: thin;
+    height: 70px;
+    width: 150px;
+    margin-left: 8%;
+}
+
+#mouth{
+    display: inline;
+    flex-direction: row;
+    font-family: poppins;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 5%;
+    border-style: solid;
+    border-color:hsl(0, 0%, 86%);
+    border-width: thin;
+    height: 70px;
+    width: 150px;
+    margin-left: 4%;
+}
+
+#year{
+    display: inline;
+    flex-direction: row;
+    font-family: poppins;
+    font-size: 32px;
+    border-radius: 5%;
+    border-style: solid;
+    font-weight: bold;
+    border-color:hsl(0, 0%, 86%);
+    border-width: thin;
+    height: 70px;
+    width: 150px;
+    margin-left: 8%;
+}
+/*Fin style input [type=text]*/
+
+/*Début style hr*/
+
+hr{
+    display:block;
+    clear:both;
+    color:hsl(0, 0%, 86%);
+    width: 700px;
+    margin-right: 0px;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+/*Fin style hr*/
+
+/*Début style button*/
+
+#image{
+    display: inline;
+    background-color: hsl(259, 100%, 65%);
+    width: 100px;
+    border-radius: 50%;
+    float: right;
+    margin:0px;
+    margin-right: 60px;
+    margin-top: -50px;
+}
+
+/*Fin style button*/
