@@ -30,7 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
-    height:70%;
+    height:75%;
     width: 60%;
     border-radius: 5%;
     border-bottom-right-radius:30%;
@@ -44,6 +44,7 @@ body {
     width: 80%;
     height: 50%;
     align-self: center;
+    column-gap: 5%;
 }
 
 label{
@@ -79,6 +80,7 @@ ul{
     font-family: poppins;
     font-weight: 900;
     margin-left: 3%;
+    width: 60%;
 }
 
 li{
@@ -86,21 +88,28 @@ li{
     font-style: italic;
 }
 
+#separator {
+    width: 100%;
+    display: flex;
+}
+
 hr{
-    display:block;
-    color:hsl(0, 0%, 86%);
-    width: 400%;
-    margin-top: 4%;
+    width: 95%;
+    height: 0%;
+    align-self: center;
+    border-color: hsl(0, 0%, 86%);
 }
 
 #button{
     display: inline;
     background-color: hsl(259, 100%, 65%);
-    width: 20%;
-    height: 40%;
+    width: 15%;
+    height: auto;
     border-radius: 50%;
-    margin-left: 100%;
-    margin-top: -5%;
+}
+
+#button:hover{
+    background-color: black;
 }
 
 #button:hover{
@@ -108,13 +117,15 @@ hr{
 }
 
 .result{
-    font-size: 70px;
+    font-size: 150%;
     color:hsl(259, 100%, 65%);
     font-family: poppins;
     font-style: italic;
     font-weight: 800;
     display: inline-block;
     padding-right:6%;
+    margin-left: 3%;
+    line-height: 0%;
 }
 
 .error{
@@ -123,7 +134,6 @@ hr{
     font-weight: 400;
     color: hsl(0, 100%, 67%);
     margin-left: 70px;
-    visibility: visible;
 }
 
 #valid_day{
