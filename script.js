@@ -24,15 +24,18 @@ function validateInput(inputDay, inputMonth, inputYear) {
 }
 
 function calculateDate (inputDay, inputMonth, inputYear){
-  let dateEnter = new Date(inputYear, inputMonth-1, inputDay)
-  let today = new Date ();
-  let differenceDate = dateEnter.getTime() - today.getTime();
+  let dateEnter = new Date(inputYear, inputMonth - 1, inputDay);
+  let today = new Date();
+  let differenceDate = today - dateEnter;
 
-  let dayDifference = differenceDate.getDay()
-  let monthDifference = differenceDate.getMonth()
-  let yearDifference = differenceDate.getYears()
+  let differenceInDays = Math.floor(differenceDate / (1000 * 60 * 60 * 24));
+  let differenceInYears = Math.floor(differenceInDays / 365);
+  let remainderDaysAfterYears = differenceInDays % 365;
 
-  return dayDifference, monthDifference, yearDifference
+  let differenceInMonths = Math.floor(remainderDaysAfterYears / 30);
+  let remainderDaysAfterMonths = remainderDaysAfterYears % 30;
+
+  return [differenceInYears, differenceInMonths, remainderDaysAfterMonths]
 }
 let button = document.getElementById("button");
 
@@ -41,9 +44,9 @@ button.addEventListener('click', function() {
   let inputMonth = document.getElementById("inputMonth").value
   let inputYear = document.getElementById("inputYear").value
   if(validateInput(inputDay, inputMonth, inputYear)) {
-      let day, month, year = calculateDate(inputDay, inputMonth, inputYear)
-      console.log(day)
-      console.log(month)
-      console.log(year)
+      let ageTable = calculateDate(inputDay, inputMonth, inputYear)
+      console.log(ageTable[0])
+      console.log(ageTable[1])
+      console.log(ageTable[2])
   }
 })

@@ -13,27 +13,35 @@
 
 <body>
   <div id="age_calculator">
-      <ul id="ul">
-        <li> DAY </li>
-        <li> MONTH</li>
-        <li> YEAR</li>
-      </ul>
-      <div id="inputs">
-        <input type="text"id ="inputDay" placeholder="DD" maxlength="2" max="31"
-        pattern="[0-9]{1,2}"/>
-        <input type="text" id="inputMonth" placeholder="MM"maxlength="2" pattern="[0-9]{1,2}" />
-        <input type="text" id="inputYear" placeholder="YYYY" maxlength="4" pattern="[0-9]{1,4}"/>
-        <span id="error">This field is required</span>
+    <form id="input_age">
+      <div class="input_field">
+        <label for="day">DAY</label>
+        <input type="text" placeholder="DD" maxlength="2" max="31" pattern="[0-9]{1,2}"/>
+          <span class="error" id="required_day">This field is required</span>
+          <span class="error" id="valid_day">Must be a valid day</span>
       </div>
-    <div id="calculateButton">
-      <hr/>
-      <input type="image" id="button" alt="Login" src="./assets/images/icon-arrow.svg">
+      <div class="input_field">
+        <label for="month">MONTH</label>
+        <input type="text"placeholder="MM"maxlength="2"pattern="[0-9]{1,2}" />
+          <span class="error" id="required_month">This field is required</span>
+          <span class="error" id="valid_month">Must be a valid month</span>
       </div>
-    <div id="result">
-      <h1><span id="spanYears">- -</span>years</h1>
-      <h1><span id="spanMonths">- -</span></spa>months</h1>
-      <h1><span id="spanDays">- -</span>days</h1>
-    </div>
+       <div class="input_field">
+        <label for="year">YEAR</label>
+        <input type="text"placeholder="YYYY" maxlength="4" pattern="[0-9]{1,4}"/>
+          <span class="error" id="required_year">This field is required</span>
+          <span class="error" id="valid_year">Must be a valid year</span>
+      </div>
+        <hr/>
+        <input type="image" id="button" alt="Login" src="./assets/images/icon-arrow.svg">
+    </form>
+      <div id="container_result">
+        <ul>
+          <li><span class="result">- -</span>years</li>
+          <li><span class="result">- -</span>months</li>
+          <li><span class="result">- -</span>days</li>
+        </ul>
+      </div>
   </div>
   <script src="./script.js" defer></script>
 </body>
