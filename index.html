@@ -16,19 +16,19 @@
     <form id="input_age">
       <div class="input_field">
         <label for="day">DAY</label>
-        <input type="text" placeholder="DD" maxlength="2" max="31" pattern="[0-9]{1,2}"/>
+        <input type="text" placeholder="DD" maxlength="2" max="31"/>
           <span class="error" id="required_day">This field is required</span>
           <span class="error" id="valid_day">Must be a valid day</span>
       </div>
       <div class="input_field">
         <label for="month">MONTH</label>
-        <input type="text"placeholder="MM"maxlength="2"pattern="[0-9]{1,2}" />
+        <input type="text"placeholder="MM"maxlength="2"/>
           <span class="error" id="required_month">This field is required</span>
           <span class="error" id="valid_month">Must be a valid month</span>
       </div>
        <div class="input_field">
         <label for="year">YEAR</label>
-        <input type="text"placeholder="YYYY" maxlength="4" pattern="[0-9]{1,4}"/>
+        <input type="text"placeholder="YYYY" maxlength="4"/>
           <span class="error" id="required_year">This field is required</span>
           <span class="error" id="valid_year">Must be a valid year</span>
       </div>
@@ -39,9 +39,9 @@
     </form>
       <div id="container_result">
         <ul>
-          <li><span class="result">- -</span>years</li>
-          <li><span class="result">- -</span>months</li>
-          <li><span class="result">- -</span>days</li>
+          <li><span class="result" id="result_years">- -</span>years</li>
+          <li><span class="result" id="result_months">- -</span>months</li>
+          <li><span class="result" id="result_days">- -</span>days</li>
         </ul>
       </div>
   </div>
