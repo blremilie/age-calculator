@@ -41,7 +41,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 100px;
-    width: 80%;
+    width: 70%;
     height: 50%;
     align-self: center;
     column-gap: 5%;
@@ -81,6 +81,7 @@ ul{
     font-weight: 900;
     margin-left: 3%;
     width: 60%;
+    margin-left: 8%;
 }
 
 li{
@@ -134,7 +135,6 @@ hr{
     font-family: poppins;
     font-weight: 400;
     color: hsl(0, 100%, 67%);
-    margin-left: 70px;
     border-color: hsl(0, 100%, 67%);
 }
 

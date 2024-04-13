@@ -4,6 +4,8 @@ function formatDate (inputDay, inputMonth, inputYear){
   return dateInput
 }
 
+formatDate();
+
 function validateDate(date) {
   const [day,month,year] = date.split("/"); 
   let errorTable = [];
@@ -22,30 +24,32 @@ function validateDate(date) {
   const monthNum = parseInt(month, 10);
   const yearNum = parseInt(year, 10);
 
-  if (isNaN(yearNum) || yearNum.lenght !== 4) {
-    errorTable.append (document.getElementById("valid_year"))
+  if (isNaN(yearNum) || yearNum.length !== 4) {
+    errorTable.push (document.getElementById("valid_year"))
   }
 
   if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) {
-    errorTable.append (document.getElementById("valid_month"))
+    errorTable.push (document.getElementById("valid_month"))
   }
 
   const dayInMonth = new Date(yearNum, monthNum, 0).getDate();
 
   if (isNaN(dayNum) || dayNum < 1 || dayNum > dayInMonth) {
-    errorTable.append (document.getElementById("valid_day"))
+    errorTable.push (document.getElementById("valid_day"))
   }
 
   return errorTable
 }
 
 function applyErrorStyle (errorTable){
-  for (let index=0; index <errorTable.lenght; index ++) {
-    errorTable[index].stye.display= block
+  for (let index=0; index <errorTable.length; index ++) {
+    errorTable[index].style.display= "block"
   }
 }
 
-function calculateDate (inputDay, inputMonth, inputYear){
+let ageTable = calculateAge(inputDay, inputMonth,inputYear);
+
+function calculateAge (inputDay, inputMonth, inputYear){
   let dateEnter = new Date(inputYear, inputMonth - 1, inputDay);
   let today = new Date();
   let differenceDate = today - dateEnter;
@@ -60,24 +64,21 @@ function calculateDate (inputDay, inputMonth, inputYear){
   return [differenceInYears, differenceInMonths, remainderDaysAfterMonths]
 }
 
-let ageTable = calculateAge(inputDay, inputMonth,inputYear);
-
 function applyCalculateStyle (ageTable){
    document.getElementById ("result_years").innerHTML = ageTable[0]
-   document.getElementById("result_months").innerHTML = ageTable[0]
-   document.getElementById("result_days").innerHTML = ageTable[0]
+   document.getElementById("result_months").innerHTML = ageTable[1]
+   document.getElementById("result_days").innerHTML = ageTable[2]
 }
 
 let button = document.getElementById("button");
 
-button.addEventListener('click', function() {
-  let inputDay = document.getElementById("inputDay").value
-  let inputMonth = document.getElementById("inputMonth").value
-  let inputYear = document.getElementById("inputYear").value
-  if(validateInput(inputDay, inputMonth, inputYear)) {
-      let ageTable = calculateDate(inputDay, inputMonth, inputYear)
-      console.log(ageTable[0])
-      console.log(ageTable[1])
-      console.log(ageTable[2])
-  }
+button.addEventListener('click', function(e) {
+  let dateFormat = formatDate(inputDay,inputMonth,inputMonth)
+  let errorTable = validateDate(dateFormat)
+  if (errorTable.length === 0){
+    let age = calculateDate (inputDay, inputMonth, inputYear); applyCalculateStyle(age);
+} else {
+  applyErrorStyle (errorTable)
+}
+e.preventDefault()
 })
