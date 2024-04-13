@@ -4,27 +4,25 @@ function formatDate (inputDay, inputMonth, inputYear){
   return dateInput
 }
 
-formatDate();
-
 function validateDate(date) {
   const [day,month,year] = date.split("/"); 
   let errorTable = [];
 
   if (!day) {
-    errorTable.append (document.getElementById ("required_day"))
+    errorTable.push (document.getElementById ("required_day"))
   }
   if (!month) {
-    errorTable.append (document.getElementById ("required_month"))
+    errorTable.push (document.getElementById ("required_month"))
   }
   if (!year) {
-    errorTable.append (document.getElementById ("required_year"))
+    errorTable.push (document.getElementById ("required_year"))
   }
 
   const dayNum = parseInt(day, 10);
   const monthNum = parseInt(month, 10);
   const yearNum = parseInt(year, 10);
 
-  if (isNaN(yearNum) || yearNum.length !== 4) {
+  if (isNaN(yearNum) || year.length !== 4) {
     errorTable.push (document.getElementById("valid_year"))
   }
 
@@ -46,8 +44,6 @@ function applyErrorStyle (errorTable){
     errorTable[index].style.display= "block"
   }
 }
-
-let ageTable = calculateAge(inputDay, inputMonth,inputYear);
 
 function calculateAge (inputDay, inputMonth, inputYear){
   let dateEnter = new Date(inputYear, inputMonth - 1, inputDay);
@@ -73,10 +69,14 @@ function applyCalculateStyle (ageTable){
 let button = document.getElementById("button");
 
 button.addEventListener('click', function(e) {
-  let dateFormat = formatDate(inputDay,inputMonth,inputMonth)
-  let errorTable = validateDate(dateFormat)
+  let inputDay = document.getElementById ("inputDay").value;
+  let inputMonth = document.getElementById ("inputMonth").value;
+  let inputYear = document.getElementById ("inputYear").value;
+  let dateFormat = formatDate(inputDay,inputMonth,inputYear);
+  let errorTable = validateDate(dateFormat);
   if (errorTable.length === 0){
-    let age = calculateDate (inputDay, inputMonth, inputYear); applyCalculateStyle(age);
+    let age = calculateAge (inputDay, inputMonth, inputYear); 
+    applyCalculateStyle (age);
 } else {
   applyErrorStyle (errorTable)
 }
